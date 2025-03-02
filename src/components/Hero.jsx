@@ -64,18 +64,16 @@ const Hero = () => {
               className="w-full h-full object-cover md:object-contain lg:object-cover rounded-lg shadow-lg"
             />
             {/* Overlay content */}
-            <div className="absolute inset-0 flex flex-col items-start justify-center bg-gray-900 bg-opacity-60 p-4 md:p-8 lg:p-12 rounded-lg">
-              <h1 className="retro-text font-extrabold mb-2 md:mb-4 text-2xl md:text-4xl lg:text-5xl">
-              Your Trusted Workers Compensation Lawyer in New Jersey
+            <div className="absolute inset-0 flex flex-col items-start justify-center bg-gray-900 bg-opacity-60 p-4 md:p-8 lg:p-12 rounded-lg space-y-6 md:space-y-6 lg:space-y-8">
+              <h1 className="retro-text font-extrabold text-2xl md:text-4xl lg:text-5xl">
+                Your Trusted Workers Compensation Lawyer in New Jersey
               </h1>
-              {/* <p className="text-sm md:text-lg lg:text-xl text-white mb-4 md:mb-6 lg:mb-8">
-                Experienced & Responsible!
-              </p> */}
+              
               <button
                 className="bg-indigo-200 hover:bg-gray-200 text-blue-900 font-bold py-2 md:py-3 lg:py-4 px-4 md:px-6 lg:px-8 rounded-lg transition duration-300"
                 onClick={openModal}
               >
-                Book Appointment
+                Contact Us
               </button>
             </div>
           </div>

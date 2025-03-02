@@ -10,6 +10,7 @@ import Videos from './components/Videos';
 import LoginPage from './components/admin/Login';
 import AdminRoutes from './components/admin/routes/AdminRoutes';
 import NotFound from './components/NotFound'; // Example 404 page
+import ThreeCXChat from "./components/ThreeCXChat";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -33,10 +34,10 @@ const App = () => {
           <Route path="/practice-areas" element={<PracticeAreas />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/login" element={<LoginPage />} />
+          {/* <Route path="/videos" element={<Videos />} />
+          <Route path="/login" element={<LoginPage />} /> */}
           {/* Use AdminRoutes for admin-related paths */}
-          <Route path="/admin/*" element={<AdminRoutes />} />
+          {/* <Route path="/admin/*" element={<AdminRoutes />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -50,6 +51,7 @@ const App = () => {
 const AppWrapper = () => (
   <Router>
     <App />
+    <ThreeCXChat />
   </Router>
 );
 

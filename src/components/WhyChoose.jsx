@@ -1,6 +1,41 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 
 const WhyChoose = () => {
+  const [device, setDevice] = useState("");
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(userAgent)) {
+      setDevice("ios");
+    } else if (/android/.test(userAgent)) {
+      setDevice("android");
+    } else if (/win/.test(userAgent)) {
+      setDevice("windows");
+    } else if (/mac/.test(userAgent)) {
+      setDevice("mac");
+    } else {
+      setDevice("other");
+    }
+  }, []);
+
+  const phoneNumber = "+19736948100";
+  const address = "810 Belmont Avenue Suite 201 North Haledon, NJ 07508";
+
+  // Phone Number Link based on device
+  const getPhoneLink = () => {
+    if (device === "ios") return `facetime:${phoneNumber}`; // FaceTime for iOS
+    if (device === "android") return `tel:${phoneNumber}`; // Android Dialer
+    if (device === "windows" || device === "mac") return `skype:${phoneNumber}?call`; // Skype
+    return `tel:${phoneNumber}`; // Default fallback
+  };
+
+  // Address Link for Google/Apple Maps
+  const getAddressLink = () => {
+    if (device === "ios") {
+      return `http://maps.apple.com/?q=${encodeURIComponent(address)}`; // Apple Maps for iOS
+    }
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`; // Google Maps for others
+  };
   return (
     <section className="max-w-7xl mx-auto px-6 sm:px-12 py-12 text-gray-900">
       {/* Header Section */}
@@ -47,9 +82,18 @@ const WhyChoose = () => {
         </p>
 
         <div className="mt-6 text-lg">
-          <p className="font-semibold text-gray-800">📞 973-694-8100</p>
+          {/* Phone Number */}
+          <p className="font-semibold text-gray-800">
+            📞 <a href={getPhoneLink()} className="hover:text-black-600">{phoneNumber}</a>
+          </p>
+
+          {/* Address */}
           <p className="font-semibold text-gray-800">📍 N. Haledon Office</p>
-          <p className="text-gray-700">810 Belmont Avenue Suite 201 North Haledon, NJ 07508</p>
+          <p className="text-gray-700">
+            <a href={getAddressLink()} target="_blank" rel="noopener noreferrer" className="hover:text-black-600">
+              {address}
+            </a>
+          </p>
         </div>
       </div>
     </section>
