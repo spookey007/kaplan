@@ -47,10 +47,18 @@ const MobileHeader = () => {
  <div className="flex items-center justify-center w-full fixed top-0 left-0 z-50 bg-white shadow-md mb-1">
 
       {/* Contact Us - Red */}
-      <div className="flex items-center justify-center bg-red-600 text-white px-4 py-2 w-full md:w-1/2 text-sm md:text-base">
-        <i className="fas fa-envelope text-white text-sm md:text-lg mr-1"></i>
-        <span className="font-bold">CONTACT US</span>
-      </div>
+
+      <Link
+        to="/contact"
+        onClick={closeMenu} // Close menu on click
+        className="w-full md:w-1/2"
+      >
+        <div className="flex items-center justify-center bg-red-600 text-white px-4 py-2 text-sm md:text-base">
+          <i className="fas fa-envelope text-white text-sm md:text-lg mr-1"></i>
+          <span className="font-bold">CONTACT US</span>
+        </div>
+      </Link>
+
 
       {/* Phone - Blue */}
       <div className="flex items-center justify-center bg-blue-800 text-white px-4 py-2 w-full md:w-1/2 text-sm md:text-base">
