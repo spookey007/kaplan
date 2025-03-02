@@ -1,5 +1,5 @@
 {
-  "name": "maggiesmagictouch",
+  "name": "kaplanlaw",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "build:dev": "vite build && nodemon server/index.mjs",
     "node": "node server/index.mjs",
     "vite": "vite preview",
-    "serve": "serve -s dist -l 4173",
+    "serve": "serve -s dist -l 7173",
     "start": "concurrently \"npm run node\" \"npm run serve\""
   },
   "dependencies": {
@@ -96,7 +96,7 @@
     "vite": "^5.4.1"
   },
   "config": {
-    "production_url": "https://maggiesmagictouch.com"
+    "production_url": "https://workerscompensationlawyer.galico.io"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
